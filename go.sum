@@ -22,6 +22,7 @@ github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UV
 github.com/ugorji/go v1.1.4 h1:j4s+tAvLfL3bZyefP2SEWmhBzmuIlH/eqNuPdFPgngw=
 github.com/ugorji/go v1.1.4/go.mod h1:uQMGLiO92mf5W77hV/PUCpI3pbzQx3CRekS0kk+RGrc=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
+
 golang.org/x/net v0.0.0-20190503192946-f4e77d36d62c/go.mod h1:t9HGtf8HONx5eT2rtn7q6eTqICYqUVnKs3thJo3Qplg=
 golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
 golang.org/x/sys v0.0.0-20190222072716-a9d3bda3a223/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
@@ -34,3 +35,26 @@ gopkg.in/go-playground/validator.v8 v8.18.2 h1:lFB4DoMU6B626w8ny76MV7VX6W2VHct2G
 gopkg.in/go-playground/validator.v8 v8.18.2/go.mod h1:RX2a/7Ha8BgOhfk7j780h4/u/RRjR0eouCJSH80/M2Y=
 gopkg.in/yaml.v2 v2.2.2 h1:ZCJp+EgiOT7lHqUV2J862kp8Qj64Jo6az82+3Td9dZw=
 gopkg.in/yaml.v2 v2.2.2/go.mod h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=
+
+
+    clientID: cafb500889d194a6ce6548a6bc0367223674917ed40cd7dee196ed63444044ae
+    clientSecretKey: clientSecret
+    clientSecretValue: 7de834690c29a6ccce10cf3f91b9b32837e152f1aaab70f31f50e5a274c7edf3
+    server: https://gitlab.cloudclusters.net
+
+
+
+Error from server (NotFound): pods "pods" not found
+root@CCS-PD1-MAS-01:~/drone# kubectl get pods -n drone
+NAME                                  READY   STATUS    RESTARTS   AGE
+drone-drone-server-54d85d8888-z4pf6   1/1     Runnin
+
+
+server:
+  ## If not set, it will be autofilled with the cluster host.
+  ## Host shoud be just the hostname.
+  ##
+  host: drone.tripanels.com
+
+  ## protocol should be http or https
+  protocol: https
